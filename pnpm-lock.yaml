@@ -5,6 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  '@remix-run/express': file:/home/hiroshi/code/others/remix/packages/remix-express
   '@remix-run/react': file:/home/hiroshi/code/others/remix/packages/remix-react
   '@remix-run/server-runtime': file:/home/hiroshi/code/others/remix/packages/remix-server-runtime
   '@remix-run/dev': file:/home/hiroshi/code/others/remix/packages/remix-dev
@@ -36,6 +37,9 @@ devDependencies:
   '@remix-run/eslint-config':
     specifier: ^2.3.1
     version: 2.3.1(eslint@8.54.0)(react@18.2.0)(typescript@5.3.2)
+  '@remix-run/express':
+    specifier: file:/home/hiroshi/code/others/remix/packages/remix-express
+    version: file:../../others/remix/packages/remix-express(express@4.18.2)(typescript@5.3.2)
   '@types/react':
     specifier: ^18.2.20
     version: 18.2.38
@@ -45,6 +49,9 @@ devDependencies:
   eslint:
     specifier: ^8.38.0
     version: 8.54.0
+  express:
+    specifier: ^4.18.2
+    version: 4.18.2
   remix-flat-routes:
     specifier: ^0.6.2
     version: 0.6.2(@remix-run/dev@2.3.1)
@@ -1317,20 +1324,6 @@ packages:
       - supports-color
     dev: true
 
-  /@remix-run/express@2.3.1(express@4.18.2)(typescript@5.3.2):
-    resolution: {integrity: sha512-6gh+3InqBWkWRmFQtyE25PRD5bCYKBBgE0DBtqcI165otBuLK/SQul003n/lu6EateenT1RuQZgLjaDGX5UlyA==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      express: ^4.17.1
-      typescript: ^5.1.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@remix-run/node': 2.3.1(typescript@5.3.2)
-      express: 4.18.2
-      typescript: 5.3.2
-
   /@remix-run/node@2.3.1(typescript@5.3.2):
     resolution: {integrity: sha512-dXoNrmLrPblUM8UjgPzq3YBLXEGzm3HwtIt0iob1SlgKx0I5ii40JG0IXHDTI9f+fN9f/Ufx7Cjp0MGcUVXWVw==}
     engines: {node: '>=18.0.0'}
@@ -1359,7 +1352,7 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
-      '@remix-run/express': 2.3.1(express@4.18.2)(typescript@5.3.2)
+      '@remix-run/express': file:../../others/remix/packages/remix-express(express@4.18.2)(typescript@5.3.2)
       '@remix-run/node': 2.3.1(typescript@5.3.2)
       chokidar: 3.5.3
       compression: 1.7.4
@@ -6743,6 +6736,22 @@ packages:
       - ts-node
       - utf-8-validate
     dev: true
+
+  file:../../others/remix/packages/remix-express(express@4.18.2)(typescript@5.3.2):
+    resolution: {directory: ../../others/remix/packages/remix-express, type: directory}
+    id: file:../../others/remix/packages/remix-express
+    name: '@remix-run/express'
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      express: ^4.17.1
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@remix-run/node': 2.3.1(typescript@5.3.2)
+      express: 4.18.2
+      typescript: 5.3.2
 
   file:../../others/remix/packages/remix-react(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {directory: ../../others/remix/packages/remix-react, type: directory}

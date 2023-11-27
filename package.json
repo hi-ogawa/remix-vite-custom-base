@@ -7,6 +7,8 @@
     "build": "vite build && vite build --ssr",
     "dev": "vite dev",
     "start": "remix-serve ./build/server/index.js",
+    "dev:custom": "node ./server.mjs",
+    "start:custom": "NODE_ENV=production node ./server.mjs",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -20,15 +22,18 @@
   "devDependencies": {
     "@remix-run/dev": "^2.3.1",
     "@remix-run/eslint-config": "^2.3.1",
+    "@remix-run/express": "^2.3.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
+    "express": "^4.18.2",
     "remix-flat-routes": "^0.6.2",
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "resolutions": {
+    "@remix-run/express": "file:/home/hiroshi/code/others/remix/packages/remix-express",
     "@remix-run/react": "file:/home/hiroshi/code/others/remix/packages/remix-react",
     "@remix-run/server-runtime": "file:/home/hiroshi/code/others/remix/packages/remix-server-runtime",
     "@remix-run/dev": "file:/home/hiroshi/code/others/remix/packages/remix-dev"
