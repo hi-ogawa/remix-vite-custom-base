@@ -6,9 +6,12 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigate,
 } from "@remix-run/react";
 
 export default function App() {
+  const navigate = useNavigate();
+
   return (
     <html lang="en">
       <head>
@@ -24,6 +27,15 @@ export default function App() {
           </li>
           <li>
             <Link to="/other">/other</Link>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                navigate("/other");
+              }}
+            >
+              useNavigate to /other
+            </button>
           </li>
         </ul>
         <Outlet />
