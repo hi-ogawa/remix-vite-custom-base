@@ -42,6 +42,9 @@ export default function App() {
               useNavigate to /other
             </button>
           </li>
+          <li>
+            <Link to="/redirect">/redirect</Link>
+          </li>
         </ul>
         <Outlet />
         <ScrollRestoration />
