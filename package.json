@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build && vite build --ssr",
     "dev": "vite dev",
-    "start": "remix-serve ./build/index.js",
+    "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -26,6 +26,10 @@
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "resolutions": {
+    "@remix-run/server-runtime": "file:/home/hiroshi/code/others/remix/packages/remix-server-runtime",
+    "@remix-run/dev": "file:/home/hiroshi/code/others/remix/packages/remix-dev"
   },
   "engines": {
     "node": ">=18.0.0"

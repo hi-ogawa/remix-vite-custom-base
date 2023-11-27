@@ -1,3 +1,11 @@
+References
+
+- https://github.com/remix-run/remix/pull/8077#issuecomment-1823469405
+- https://github.com/remix-run/remix/issues/8052
+- https://github.com/kiliman/remix-flat-routes
+
+---
+
 # templates/unstable-vite
 
 ⚠️ Remix support for Vite is unstable and not recommended for production.
