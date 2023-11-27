@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -17,6 +18,15 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <ul>
+          <li>
+            {/* still requires link to be prefixed with base manually */}
+            <Link to="/mybase/">/mybase/</Link>
+          </li>
+          <li>
+            <Link to="/mybase/other">/mybase/other</Link>
+          </li>
+        </ul>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
