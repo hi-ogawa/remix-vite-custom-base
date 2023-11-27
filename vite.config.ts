@@ -6,6 +6,7 @@ export default defineConfig({
   clearScreen: false,
   plugins: [
     remix({
+      basename: "/mybase/",
       publicPath: "/mybase/",
     }),
     tsconfigPaths(),
