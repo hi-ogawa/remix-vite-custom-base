@@ -29,6 +29,11 @@ export default function App() {
             <Link to="/other">/other</Link>
           </li>
           <li>
+            <Link to="/other" prefetch="intent">
+              /other (with prefetch)
+            </Link>
+          </li>
+          <li>
             <button
               onClick={() => {
                 navigate("/other");
