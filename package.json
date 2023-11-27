@@ -29,6 +29,7 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "resolutions": {
+    "@remix-run/react": "file:/home/hiroshi/code/others/remix/packages/remix-react",
     "@remix-run/server-runtime": "file:/home/hiroshi/code/others/remix/packages/remix-server-runtime",
     "@remix-run/dev": "file:/home/hiroshi/code/others/remix/packages/remix-dev"
   },

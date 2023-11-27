@@ -5,6 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  '@remix-run/react': file:/home/hiroshi/code/others/remix/packages/remix-react
   '@remix-run/server-runtime': file:/home/hiroshi/code/others/remix/packages/remix-server-runtime
   '@remix-run/dev': file:/home/hiroshi/code/others/remix/packages/remix-dev
 
@@ -13,8 +14,8 @@ dependencies:
     specifier: ^2.3.1
     version: 2.3.1(typescript@5.3.2)
   '@remix-run/react':
-    specifier: ^2.3.1
-    version: 2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+    specifier: file:/home/hiroshi/code/others/remix/packages/remix-react
+    version: file:../../others/remix/packages/remix-react(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
   '@remix-run/serve':
     specifier: ^2.3.1
     version: 2.3.1(typescript@5.3.2)
@@ -1348,25 +1349,6 @@ packages:
       source-map-support: 0.5.21
       stream-slice: 0.1.2
       typescript: 5.3.2
-
-  /@remix-run/react@2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-7NozlZtbL5jtRGJhSrMydUGJGVp8kSjnv7APcsDojLbRHZJsLw8B0eXlVqKDg2M+WfRcBkuTI/ipgwIyLPRRyw==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-      typescript: ^5.1.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@remix-run/router': 1.13.0
-      '@remix-run/server-runtime': file:../../others/remix/packages/remix-server-runtime(typescript@5.3.2)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      react-router-dom: 6.20.0(react-dom@18.2.0)(react@18.2.0)
-      typescript: 5.3.2
-    dev: false
 
   /@remix-run/router@1.13.0:
     resolution: {integrity: sha512-5dMOnVnefRsl4uRnAdoWjtVTdh8e6aZqgM4puy9nmEADH72ck+uXwzpJLEKE9Q6F8ZljNewLgmTfkxUrBdv4WA==}
@@ -6761,6 +6743,27 @@ packages:
       - ts-node
       - utf-8-validate
     dev: true
+
+  file:../../others/remix/packages/remix-react(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {directory: ../../others/remix/packages/remix-react, type: directory}
+    id: file:../../others/remix/packages/remix-react
+    name: '@remix-run/react'
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@remix-run/router': 1.13.0
+      '@remix-run/server-runtime': file:../../others/remix/packages/remix-server-runtime(typescript@5.3.2)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-router-dom: 6.20.0(react-dom@18.2.0)(react@18.2.0)
+      typescript: 5.3.2
+    dev: false
 
   file:../../others/remix/packages/remix-server-runtime(typescript@5.3.2):
     resolution: {directory: ../../others/remix/packages/remix-server-runtime, type: directory}
