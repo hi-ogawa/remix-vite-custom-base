@@ -11,7 +11,16 @@ export const loader: LoaderFunction = ({ request }) => {
 export default function Route() {
   return (
     <div>
-      <Link to="?test">trigger redirect to /other</Link>
+      <ul>
+        <li>
+          <Link to="?test">trigger redirect to /other</Link>
+        </li>
+        <li>
+          <Link to="?test" target="_blank">
+            server redirect in new tab
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }
