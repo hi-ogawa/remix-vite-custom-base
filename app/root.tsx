@@ -20,11 +20,10 @@ export default function App() {
       <body>
         <ul>
           <li>
-            {/* still requires link to be prefixed with base manually */}
-            <Link to="/mybase/">/mybase/</Link>
+            <Link to="/">/</Link>
           </li>
           <li>
-            <Link to="/mybase/other">/mybase/other</Link>
+            <Link to="/other">/other</Link>
           </li>
         </ul>
         <Outlet />
