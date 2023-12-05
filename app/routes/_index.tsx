@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link, useNavigate } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,10 +9,31 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const navigate = useNavigate();
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
       <ul>
+        <li>
+          <Link to="./other" relative="route">
+            ./other (relative=route)
+          </Link>
+        </li>
+        <li>
+          <Link to="./other" relative="path">
+            ./other (relative=path)
+          </Link>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              navigate("./other");
+            }}
+          >
+            useNavigate to ./other
+          </button>
+        </li>
         <li>
           <a
             target="_blank"
