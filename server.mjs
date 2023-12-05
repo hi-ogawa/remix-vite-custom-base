@@ -16,9 +16,21 @@ const vite =
         })
       );
 
-const mainApp = express();
+const rootApp = express();
+
+rootApp.get("/", (_req, res) => {
+  res.setHeader("content-type", "text/html");
+  res.end(`Remix app is at <a href="/mybase">/mybase</a>`);
+});
+
+// example app outside of remix basename
+rootApp.get("/out-of-base", (_req, res) => {
+  res.end("This is outside of Remix app");
+});
+
+// remix app under basename
 const app = express.Router();
-mainApp.use("/mybase", app);
+rootApp.use("/mybase", app);
 
 // handle asset requests
 if (vite) {
@@ -42,4 +54,4 @@ app.all(
 );
 
 const port = 3000;
-mainApp.listen(port, () => console.log("http://localhost:" + port));
+rootApp.listen(port, () => console.log("http://localhost:" + port));
