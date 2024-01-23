@@ -1,7 +1,7 @@
 import { createRequestHandler } from "@remix-run/express";
 import express from "express";
 
-const vite =
+const viteDevServer =
   process.env.NODE_ENV === "production"
     ? undefined
     : await import("vite").then(({ createServer }) =>
@@ -16,7 +16,7 @@ const rootApp = express();
 
 rootApp.get("/", (_req, res) => {
   res.setHeader("content-type", "text/html");
-  res.end(`Remix app is at <a href="/mybase">/mybase</a>`);
+  res.end(`Remix app is at <a href="/mybase/">/mybase/</a>`);
 });
 
 // example app outside of remix basename
@@ -25,26 +25,26 @@ rootApp.get("/out-of-base", (_req, res) => {
 });
 
 // remix app under basename
-const app = express.Router();
-rootApp.use("/mybase", app);
+const remixApp = express.Router();
+rootApp.use("/mybase", remixApp);
 
 // handle asset requests
-if (vite) {
-  app.use(vite.middlewares);
+if (viteDevServer) {
+  remixApp.use(viteDevServer.middlewares);
 } else {
-  app.use(
+  remixApp.use(
     "/assets",
     express.static("build/client/assets", { immutable: true, maxAge: "1y" })
   );
-  app.use(express.static("build/client", { maxAge: "1h" }));
+  remixApp.use(express.static("build/client", { maxAge: "1h" }));
 }
 
 // handle SSR requests
-app.all(
+remixApp.all(
   "*",
   createRequestHandler({
-    build: vite
-      ? () => vite.ssrLoadModule("virtual:remix/server-build")
+    build: viteDevServer
+      ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
       : await import("./build/server/index.js"),
   })
 );
