@@ -7,6 +7,8 @@
     "build": "vite build && vite build --ssr",
     "dev": "vite dev",
     "start": "remix-serve ./build/server/index.js",
+    "dev:custom": "node ./server.mjs",
+    "start:custom": "NODE_ENV=production node ./server.mjs",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -20,17 +22,23 @@
   "devDependencies": {
     "@remix-run/dev": "^2.3.1",
     "@remix-run/eslint-config": "^2.3.1",
+    "@remix-run/express": "^2.3.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
+    "express": "^4.18.2",
     "remix-flat-routes": "^0.6.2",
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
     "vite-tsconfig-paths": "^4.2.1"
   },
   "resolutions": {
-    "@remix-run/server-runtime": "file:/home/hiroshi/code/others/remix/packages/remix-server-runtime",
-    "@remix-run/dev": "file:/home/hiroshi/code/others/remix/packages/remix-dev"
+    "@remix-run/node": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/node",
+    "@remix-run/react": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/react",
+    "@remix-run/serve": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/serve",
+    "@remix-run/express": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/express",
+    "@remix-run/server-runtime": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/server-runtime",
+    "@remix-run/dev": "file:/home/hiroshi/code/others/remix/build/node_modules/@remix-run/dev"
   },
   "engines": {
     "node": ">=18.0.0"
