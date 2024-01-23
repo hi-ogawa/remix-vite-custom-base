@@ -42,6 +42,10 @@ if (viteDevServer) {
 // handle SSR requests
 remixApp.all(
   "*",
+  (req, _res, next) => {
+    req.url = req.originalUrl; // remix/react-router must be aware of full url
+    next();
+  },
   createRequestHandler({
     build: viteDevServer
       ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
