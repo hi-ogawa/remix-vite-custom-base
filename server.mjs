@@ -1,9 +1,5 @@
-import { unstable_viteServerBuildModuleId } from "@remix-run/dev";
 import { createRequestHandler } from "@remix-run/express";
-import { installGlobals } from "@remix-run/node";
 import express from "express";
-
-installGlobals();
 
 const vite =
   process.env.NODE_ENV === "production"
@@ -40,15 +36,15 @@ if (vite) {
     "/assets",
     express.static("build/client/assets", { immutable: true, maxAge: "1y" })
   );
+  app.use(express.static("build/client", { maxAge: "1h" }));
 }
-app.use(express.static("build/client", { maxAge: "1h" }));
 
 // handle SSR requests
 app.all(
   "*",
   createRequestHandler({
     build: vite
-      ? () => vite.ssrLoadModule(unstable_viteServerBuildModuleId)
+      ? () => vite.ssrLoadModule("virtual:remix/server-build")
       : await import("./build/server/index.js"),
   })
 );
